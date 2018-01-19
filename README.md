@@ -1,10 +1,10 @@
-# Jagged Pixel Synth
+# Pixel Synth
 
-## [Demo](https://jaggedpixelsynth.xyz)
+## [Demo](https://pixelsynth.com)
 
 A lofi video synthesizer.
 
-![Jagged Pixel Synth](http://jaggedpixelsynth.xyz/img/screen.png)
+![Jagged Pixel Synth](http://pixelsynth.com/img/screen.png)
 
 ## Controls
 
@@ -16,7 +16,7 @@ Plug in a MIDI controller then refresh the page. The code auto connects to the f
 
 ## The Code
 
-The interesting bits of this project are [main.js](https://github.com/gridwalk/jagged-pixel-synth/blob/master/src/js/app/main.js) and [midi.js](https://github.com/gridwalk/jagged-pixel-synth/blob/master/src/js/app/midi.js). This repository is based on [Net Art Starter](https://github.com/gridwalk/net-art-starter). Everything you need to know to build and edit this project are in that repository.
+The interesting bits of this project are [main.js](https://github.com/gridwalk/pixel-synth/blob/master/src/js/app/main.js) and [midi.js](https://github.com/gridwalk/pixel-synth/blob/master/src/js/app/midi.js). This repository is based on [Net Art Starter](https://github.com/gridwalk/net-art-starter). Everything you need to know to build and edit this project are in that repository.
 
 ### Thanks
 
