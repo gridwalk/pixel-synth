@@ -1,6 +1,6 @@
 # Jagged Pixel Synth
 
-https://jaggedpixelsynth.xyz
+## [Demo](https://jaggedpixelsynth.xyz)
 
 A lofi video synthesizer.
 
