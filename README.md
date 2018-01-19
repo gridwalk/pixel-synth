@@ -4,7 +4,7 @@
 
 A lofi video synthesizer.
 
-![Jagged Pixel Synth](http://pixelsynth.com/img/screen.png)
+![Pixel Synth](http://pixelsynth.com/img/screen.png)
 
 ## Controls
 

@@ -41,7 +41,7 @@ var Synth = function(){
     }  
   ]
 
-  this.init = function(){ 
+  this.resetSize = function(){
     width  = window.innerWidth/4
     height = window.innerHeight/4
     _canvas = document.getElementById('canvas')
@@ -51,6 +51,12 @@ var Synth = function(){
     _canvas.setAttribute('height',height)
     this.ctx = _canvas.getContext('2d')
     this.imageData = this.ctx.getImageData(0, 0, width, height)
+    return this.imageData
+  }
+
+  this.init = function(){ 
+    
+    this.resetSize()
 
     // get initial URL params of synth
     // used to recall synth falues from URL
@@ -166,7 +172,9 @@ gui.add(synth, 'saveLinkToClipboard')
 var resizeTimer;
 window.onresize = function(){
   clearTimeout(resizeTimer)
-  resizeTimer = setTimeout(synth.init, 100)
+  resizeTimer = setTimeout(function(){
+    synth.imageData = synth.resetSize()
+  }, 100)
 }
 
 
@@ -218,7 +226,7 @@ document.getElementById('canvas').onclick = synth.randomize
 
 var _about = document.createElement('li')
 _about.classList.add('about')
-_about.innerHTML = "Jagged Pixel Synth is a lofi video synthesizer. Click the screen to randomize. Save link button is for sharing patches. Works with MIDI (in Chrome &amp; Opera). Press H to hide this message. Project by <a target='_blank' href='https://donaldhanson.net'>Donald Hanson</a>."
+_about.innerHTML = "Pixel Synth is a lofi video synthesizer. Click the screen to randomize. Save link button is for sharing patches. Works with MIDI (in Chrome &amp; Opera). Press H to hide this message. <a href='https://github.com/gridwalk/pixel-synth' target='_blank'>Open Source</a>. Project by <a target='_blank' href='https://donaldhanson.net'>Donald Hanson</a>."
 var guiList = document.querySelector('.dg.main > ul')
 guiList.insertBefore(_about, guiList.firstElementChild)
 
