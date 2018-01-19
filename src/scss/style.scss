@@ -1,0 +1,41 @@
+@import "reset";
+@import "dat.gui";
+
+*{
+  box-sizing: border-box;
+  text-size-adjust:none;
+}
+
+.container{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+canvas{
+  margin-left: auto;
+  margin-right: auto;
+  transform:scale(4);
+  // display: block;
+  image-rendering: optimizeSpeed;             /* Older versions of FF          */
+  image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+  image-rendering: -webkit-optimize-contrast; /* Safari                        */
+  image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+  image-rendering: pixelated;                 /* Awesome future-browsers       */
+}
+
+.about{
+  max-height: none;
+  height: auto!important;
+  line-height: 1.4em!important;
+  padding: 10px!important;
+
+  a{
+    color:cyan;
+  }
+}
+
+
+
