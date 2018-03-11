@@ -340,16 +340,28 @@ draw()
 document.getElementById('canvas').onclick = synth.randomize
 
 // add about section
-var _about = document.createElement('li')
-_about.classList.add('about')
-_about.innerHTML = "Pixel Synth is a lofi video synthesizer. Click the screen to randomize. Save link button is for sharing patches. Works with MIDI (in Chrome &amp; Opera). Press H to hide this message. <a href='https://github.com/gridwalk/pixel-synth' target='_blank'>Open Source</a>. Project by <a target='_blank' href='https://donaldhanson.net'>Donald Hanson</a>."
-var _guiList = document.querySelector('.dg.main > ul')
-_guiList.insertBefore(_about, _guiList.firstElementChild)
+if( URLparam('info') !== 0 ){
 
-// close controls if it overflows the screen
-if( _guiList.clientHeight+100 > window.innerHeight ){
-  gui.close()
+  var _about = document.createElement('li')
+  _about.classList.add('about')
+  _about.innerHTML = "Pixel Synth is a lofi video synthesizer. Click the screen to randomize. Save link button is for sharing patches. Works with MIDI (in Chrome &amp; Opera). Press H or tap this message to hide it. <a href='https://github.com/gridwalk/pixel-synth' target='_blank'>Open Source</a>. Project by <a target='_blank' href='https://donaldhanson.net'>Donald Hanson</a>."
+  var _guiList = document.querySelector('.dg.main > ul')
+  _guiList.insertBefore(_about, _guiList.firstElementChild)
+
+  // close controls if it overflows the screen
+  if( _guiList.clientHeight+100 > window.innerHeight ){
+    gui.close()
+  }
+
+  _about.onclick = function(e){
+    console.log(e.target.tagName)
+    if( e.target.tagName !== "LI" ) return
+    this.remove()
+  }
+
 }
+
+
 // add MIDI to GUI
 
 var midiCCs = []
