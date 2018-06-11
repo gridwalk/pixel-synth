@@ -246,3 +246,8 @@ if( URLparam('info') !== 0 ){
 
 }
 
+// remove controls if info = 0
+if( URLparam('info') == 0 ){
+  document.querySelector('.dg.ac').style.display = 'none'
+}
+
