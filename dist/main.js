@@ -469,6 +469,8 @@ WebMidi.enable(function (err) {
   }
   
   input = WebMidi.inputs[0]
+  if(!input) return 
+    
   input.addListener('controlchange', "all", function (e) {
     
     var cc    = e.controller.number
